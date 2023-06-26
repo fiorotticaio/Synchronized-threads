@@ -9,22 +9,24 @@ Gorila setIdGorila(Gorila gorila, int id) {
   return gorila;
 }
 
-int getLadoAtualGorila(Gorila gorila) {
-  return gorila.ladoAtual;
+int getLadoOrigemGorila(Gorila gorila) {
+  return gorila.ladoOrigem;
 }
 
-Gorila setLadoAtualGorila(Gorila gorila, int ladoAtual) {
-  gorila.ladoAtual = ladoAtual;
+Gorila setLadoOrigemGorila(Gorila gorila, int ladoOrigem) {
+  gorila.ladoOrigem = ladoOrigem;
   return gorila;
 }
 
-Gorila atravessaGorila(Gorila gorila) {
-  if (gorila.ladoAtual == 0) gorila.ladoAtual = 1;
-  else                       gorila.ladoAtual = 0;
+int getLadoDestinoGorila(Gorila gorila) {
+  return gorila.ladoDestino;
+}
+
+Gorila setLadoDestinoGorila(Gorila gorila, int ladoDestino) {
+  gorila.ladoDestino = ladoDestino;
   return gorila;
 }
 
-// TODO: Esquema de prioridade dos gorilas perante os macacos
 int podeAtravessarGorila(int qtdGorilasNaPonte, int qtdMacacosNaPonte) {
   if (qtdGorilasNaPonte == 0 && qtdMacacosNaPonte == 0) return 1;
   else                                                  return 0;

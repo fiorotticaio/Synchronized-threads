@@ -3,18 +3,21 @@
 
 typedef struct {
   int id;
-  int ladoAtual;
+  int ladoOrigem; // 0 = esquerda, 1 = direita
+  int ladoDestino; // 0 = esquerda, 1 = direita
 } Gorila;
 
 int getIdGorila(Gorila gorila);
 
 Gorila setIdGorila(Gorila gorila, int id);
 
-int getLadoAtualGorila(Gorila gorila);
+int getLadoOrigemGorila(Gorila gorila);
 
-Gorila setLadoAtualGorila(Gorila gorila, int ladoAtual);
+Gorila setLadoOrigemGorila(Gorila gorila, int ladoOrigem);
 
-Gorila atravessaGorila(Gorila gorila);
+int getLadoDestinoGorila(Gorila gorila);
+
+Gorila setLadoDestinoGorila(Gorila gorila, int ladoDestino);
 
 int podeAtravessarGorila(int qtdGorilasNaPonte, int qtdMacacosNaPonte);
 
