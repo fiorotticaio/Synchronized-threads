@@ -3,22 +3,22 @@
 
 typedef struct {
   int id;
-  int ladoAtual; // 0 = esquerda, 1 = direita
+  int ladoOrigem; // 0 = esquerda, 1 = direita
+  int ladoDestino; // 0 = esquerda, 1 = direita
 } Macaco;
 
 int getIdMacaco(Macaco macaco);
 
 Macaco setIdMacaco(Macaco macaco, int id);
 
-int getLadoAtual(Macaco macaco);
+int getLadoOrigemMacaco(Macaco macaco);
 
-Macaco setLadoAtual(Macaco macaco, int ladoAtual);
+Macaco setLadoOrigemMacaco(Macaco macaco, int LadoOrigem);
 
-Macaco atravessaMacaco(Macaco macaco);
+int getLadoDestinoMacaco(Macaco macaco);
 
-int podeAtravessarMacaco(Macaco macaco, 
-                        Macaco macacosNaPonte[], 
-                        int qtdMacacosNaPonte, 
-                        int qtdGorilasNaPonte);
+Macaco setLadoDestinoMacaco(Macaco macaco, int LadoDestino);
+
+int podeAtravessarMacaco(Macaco macaco, Macaco macacosNaPonte[], int qtdMacacosNaPonte, int qtdGorilasNaPonte, int qtdGorilasQueQueremAtravessar);
 
 #endif // MACACO_H
