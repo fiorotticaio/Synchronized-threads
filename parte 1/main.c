@@ -38,6 +38,7 @@ void* macaco(void* arg) {
   qtdMacacosNaPonte++;
   printf("Macaco %d está atravessando a ponte.\n", getIdMacaco(macaco));
   usleep(rand() % 2000000); // Simula a travessia
+  macaco = atravessaMacaco(macaco);
   printf("Macaco %d atravessou a ponte.\n", getIdMacaco(macaco));
   qtdMacacosNaPonte--;
 
@@ -59,6 +60,7 @@ void* gorila(void* arg) {
   qtdGorilasNaPonte++;
   printf("Gorila %d está atravessando a ponte.\n", getIdGorila(gorila));
   usleep(rand() % 2000000); // Simula a travessia
+  gorila = atravessaGorila(gorila);
   printf("Gorila %d atravessou a ponte.\n", getIdGorila(gorila));
   qtdGorilasNaPonte--;
 

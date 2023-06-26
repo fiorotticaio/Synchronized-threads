@@ -14,7 +14,7 @@ int getLadoAtual(Macaco macaco);
 
 Macaco setLadoAtual(Macaco macaco, int ladoAtual);
 
-Macaco trocarLado(Macaco macaco);
+Macaco atravessaMacaco(Macaco macaco);
 
 int podeAtravessarMacaco(Macaco macaco, 
                         Macaco macacosNaPonte[], 

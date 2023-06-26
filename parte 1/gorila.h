@@ -14,7 +14,7 @@ int getLadoAtualGorila(Gorila gorila);
 
 Gorila setLadoAtualGorila(Gorila gorila, int ladoAtual);
 
-Gorila trocarLadoGorila(Gorila gorila);
+Gorila atravessaGorila(Gorila gorila);
 
 int podeAtravessarGorila(int qtdGorilasNaPonte, int qtdMacacosNaPonte);
 

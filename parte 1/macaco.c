@@ -18,7 +18,7 @@ Macaco setLadoAtual(Macaco macaco, int ladoAtual) {
   return macaco;
 }
 
-Macaco trocarLado(Macaco macaco) {
+Macaco atravessaMacaco(Macaco macaco) {
   if (macaco.ladoAtual == 0) macaco.ladoAtual = 1;
   else                        macaco.ladoAtual = 0;
   return macaco;

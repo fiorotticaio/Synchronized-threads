@@ -18,9 +18,9 @@ Gorila setLadoAtualGorila(Gorila gorila, int ladoAtual) {
   return gorila;
 }
 
-Gorila trocarLadoGorila(Gorila gorila) {
+Gorila atravessaGorila(Gorila gorila) {
   if (gorila.ladoAtual == 0) gorila.ladoAtual = 1;
-  else                        gorila.ladoAtual = 0;
+  else                       gorila.ladoAtual = 0;
   return gorila;
 }
 
