@@ -50,7 +50,7 @@ void* gorila(void* arg) {
   usleep(rand() % 2000000); // Atraso aleatório antes de iniciar a travessia
 
   sem_wait(&semGorilas); // Verifica a disponibilidade do gorila
-  qtdGorilasQueQueremAtravessar++;
+  qtdGorilasQueQueremAtravessar++; // Gorilas tem prioridade
   while (!podeAtravessarGorila(qtdGorilasNaPonte, qtdMacacosNaPonte)) {
     sem_post(&semGorilas); // Libera o semáforo
     usleep(100000); // Espera um curto período e tenta novamente
