@@ -27,11 +27,11 @@ Macaco setLadoDestinoMacaco(Macaco macaco, int LadoDestino) {
   return macaco;
 }
 
-static int temMacacoNaMesmaDirecao(Macaco macaco, Macaco macacosNaPonte[], int qtdMacacosNaPonte) {
+static int temMacacoNaDirecaoOposta(Macaco macaco, Macaco macacosNaPonte[], int qtdMacacosNaPonte) {
   int i = 0;
   for (i = 0; i < qtdMacacosNaPonte; i++) {
     if (macaco.id != macacosNaPonte[i].id &&
-      macaco.ladoDestino == macacosNaPonte[i].ladoDestino) // Tem macaco na ponte que está indo para o mesmo lado
+      macaco.ladoOrigem == macacosNaPonte[i].ladoDestino) // Tem macaco na ponte que está indo para a direção oposta
     {
       return 1;
     }
@@ -45,9 +45,9 @@ int podeAtravessarMacaco(Macaco macaco,
                         int qtdGorilasNaPonte,
                         int qtdGorilasQueQueremAtravessar)  
 {
-  if (qtdGorilasNaPonte > 0)                                                    return 0;
-  else if (qtdGorilasQueQueremAtravessar > 0)                                   return 0; // Gorilas tem prioridade
-  else if (qtdMacacosNaPonte == 0)                                              return 1;
-  else if (temMacacoNaMesmaDirecao(macaco, macacosNaPonte, qtdMacacosNaPonte))  return 1;
-  else                                                                          return 0;
+  if (qtdGorilasNaPonte > 0)                                                     return 0;
+  else if (qtdGorilasQueQueremAtravessar > 0)                                    return 0; // Gorilas tem prioridade
+  else if (qtdMacacosNaPonte == 0)                                               return 1;
+  else if (!temMacacoNaDirecaoOposta(macaco, macacosNaPonte, qtdMacacosNaPonte)) return 1;
+  else                                                                           return 0;
 }
