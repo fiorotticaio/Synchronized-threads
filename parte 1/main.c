@@ -38,9 +38,9 @@ void* macaco(void* arg) {
   /* Pode atravessar */
   macacosNaPonte[qtdMacacosNaPonte] = macaco;
   qtdMacacosNaPonte++;
-  printf("Macaco %d está atravessando a ponte.\n", getIdMacaco(macaco));
+  printf("Macaco %d está atravessando a ponte. (lado %d -> lado %d) \n", getIdMacaco(macaco), getLadoOrigemMacaco(macaco), getLadoDestinoMacaco(macaco));
   usleep(rand() % 2000000); // Simula a travessia
-  printf("Macaco %d atravessou a ponte.\n", getIdMacaco(macaco));
+  printf("Macaco %d atravessou a ponte. (lado %d -> lado %d) \n", getIdMacaco(macaco), getLadoOrigemMacaco(macaco), getLadoDestinoMacaco(macaco));
   qtdMacacosNaPonte--;
   sem_post(&semMacacos); // Libera o semáforo
 }
@@ -61,9 +61,9 @@ void* gorila(void* arg) {
   gorilasNaPonte[qtdGorilasNaPonte] = gorila;
   qtdGorilasNaPonte++;
   qtdGorilasQueQueremAtravessar--;
-  printf("Gorila %d está atravessando a ponte.\n", getIdGorila(gorila));
+  printf("\x1b[1;31mGorila %d está atravessando a ponte. (lado %d -> lado %d)\x1b[0m\n", getIdGorila(gorila), getLadoOrigemGorila(gorila), getLadoDestinoGorila(gorila));
   usleep(rand() % 2000000); // Simula a travessia
-  printf("Gorila %d atravessou a ponte.\n", getIdGorila(gorila));
+  printf("\x1b[1;31mGorila %d atravessou a ponte. (lado %d -> lado %d)\x1b[0m\n", getIdGorila(gorila), getLadoOrigemGorila(gorila), getLadoDestinoGorila(gorila));
   qtdGorilasNaPonte--;
 
   sem_post(&semGorilas); // Libera o semáforo
@@ -77,6 +77,7 @@ int main(int argc, char **argv) {
 
   sem_init(&semMacacos, 0, NUM_MACACOS/2); // Inicialização do semáforo dos macacos
   /* No máximo 5 (NUM_MACACOS/2) macacos podem atravessar ao mesmo tempo, que são os macacos que vão na mesma direção */
+  
   sem_init(&semGorilas, 0, 1); // Inicialização do semáforo dos gorilas
   /* Um gorila só pode atravessar a ponte sozinho */
 

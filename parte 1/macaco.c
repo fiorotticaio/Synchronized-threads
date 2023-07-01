@@ -47,7 +47,7 @@ int podeAtravessarMacaco(Macaco macaco,
 {
   if (qtdGorilasNaPonte > 0)                                                     return 0;
   else if (qtdGorilasQueQueremAtravessar > 0)                                    return 0; // Gorilas tem prioridade
-  else if (qtdMacacosNaPonte == 0)                                               return 1;
+  else if (qtdMacacosNaPonte == 0)                                               return 1; // TODO: acho que não precisa disso
   else if (!temMacacoNaDirecaoOposta(macaco, macacosNaPonte, qtdMacacosNaPonte)) return 1;
   else                                                                           return 0;
 }
